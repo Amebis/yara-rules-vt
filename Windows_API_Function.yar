@@ -68,5 +68,8 @@ rule Windows_API_Function
         or
         /* trigger = 'PE' */
         (uint16be(uint32(0x3c)) == 0x5045)
+        or
+        /* MSI */
+        (uint32be(0x0) == 0xd0cf11e0)
     )
 }
